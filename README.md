@@ -1,12 +1,21 @@
-# React + Vite
+# My Book List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+A simple React app that allows users to create and manage a book list. Users can add a book to the list using an input form, which is then displayed on the screen. The app provides a simple, interactive interface to manage a list of books.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add a Book**: Add a book to the list by typing the book name into the input field and clicking the "Add Book" button.
+- **View Book List**: The added books are displayed in a list below the form.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Upcoming Features
+
+-**Edit Books** Being Able to Edit Books. 
+-**Delete Books** Being Able to Delete Books. -**Search & Filter Books** Being Able to search through books depending on the book title and Author.
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **CSS**: Basic styling for the app's UI.
+- **useState**: React hook to manage the book list and input state.
