@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
-const InputForm = ({ addBook }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+const InputForm = ({ addBook, bookToEdit }) => {
+  const [title, setTitle] = useState(bookToEdit ? bookToEdit.title : "");
+  const [author, setAuthor] = useState(bookToEdit ? bookToEdit.author : "");
 
   const handleTitle = (event) => setTitle(event.target.value);
   const handleAuthor = (event) => setAuthor(event.target.value);
 
   const submitBook = (event) => {
     event.preventDefault();
+
+    let trimmedTitle = title.trim();
+    let trimmedAuthor = author.trim();
 
     if (title.trim() === "" && author.trim() === "") {
       alert("Please Enter Valid Values");
@@ -21,7 +24,7 @@ const InputForm = ({ addBook }) => {
       return;
     }
 
-    const newBook = { title, author };
+    const newBook = { title: trimmedTitle, author: trimmedAuthor };
     addBook(newBook);
 
     setTitle("");
@@ -61,7 +64,7 @@ const InputForm = ({ addBook }) => {
         type="submit"
         className="w-full p-3 rounded-md bg-blue-700 cursor-pointer text-gray-200 hover:bg-blue-900 hover:text-white transition"
       >
-        Add Book
+        {bookToEdit ? "Update Book" : "Add Book"}
       </button>
     </form>
   );
