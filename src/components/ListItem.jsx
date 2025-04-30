@@ -14,13 +14,13 @@ const ListItem = ({ books, deleteBook, setBookIndex }) => {
             <div className="flex mt-2">
               <button
                 onClick={() => deleteBook(index)}
-                className="p-3 bg-red-600 text-white rounded-md mr-4 w-[100%]"
+                className="p-3 bg-red-600 text-white cursor-pointer rounded-md mr-4 w-[100%]"
               >
                 Delete
               </button>
               <button
                 onClick={() => setBookIndex(index)}
-                className="p-3 bg-green-600 text-white w-[100%]"
+                className="p-3 bg-green-600 text-white cursor-pointer w-[100%]"
               >
                 Edit
               </button>
