@@ -1,7 +1,6 @@
 import React from "react";
 
 const ListItem = ({ books, deleteBook, setBookIndex }) => {
-  console.log(books);
   return (
     <>
       <ul className="max-w-2xl w-[100%] gap-4">

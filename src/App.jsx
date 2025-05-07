@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputForm from "./components/InputForm";
 import ListItem from "./components/ListItem";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState(() => {
+    const savedBooks = localStorage.getItem("myBooks");
+    return savedBooks ? JSON.parse(savedBooks) : [];
+  });
+  
   const [bookIndex, setBookIndex] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("myBooks", JSON.stringify(books));
+  }, [books]);
 
   function addBooks(newBook) {
     if (bookIndex != undefined && bookIndex != null) {
@@ -25,7 +33,6 @@ const App = () => {
 
   function setBookIndexfn(index) {
     setBookIndex(index);
-    console.log(index);
   }
 
   return (
